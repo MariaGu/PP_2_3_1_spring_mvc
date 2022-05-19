@@ -28,8 +28,12 @@ import java.util.Properties;
 
 public class PersistenceJRAConfig {
 
-    @Autowired
     private Environment environment;
+
+    @Autowired
+    public void setEnvironment(Environment environment) {
+        this.environment = environment;
+    }
 
     @Bean
     public EntityManagerFactory entityManagerFactory(DataSource dataSource, Properties hibernateProperties) {
